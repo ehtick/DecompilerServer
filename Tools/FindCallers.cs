@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class FindCallersTool
 {
-    [McpServerTool, Description("List direct callers of a method.")]
+    [McpServerTool(ReadOnly = true), Description("List direct callers of a method.")]
     public static string FindCallers(string methodId, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

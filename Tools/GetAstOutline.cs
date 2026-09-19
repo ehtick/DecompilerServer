@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetAstOutlineTool
 {
-    [McpServerTool, Description("Metadata-based outline for quick orientation. This is not a full statement-level AST.")]
+    [McpServerTool(ReadOnly = true), Description("Metadata-based outline for quick orientation. This is not a full statement-level AST.")]
     public static string GetAstOutline(string memberId, int maxDepth = 2, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GenerateHarmonyPatchSkeletonTool
 {
-    [McpServerTool, Description("Generate a Harmony patch skeleton for a given member.")]
+    [McpServerTool(ReadOnly = true), Description("Generate a Harmony patch skeleton for a given member.")]
     public static string GenerateHarmonyPatchSkeleton(string memberId, string patchKinds = "Prefix,Postfix,Transpiler,Finalizer", bool includeReflectionTargeting = true, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

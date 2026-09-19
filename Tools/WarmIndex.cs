@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class WarmIndexTool
 {
-    [McpServerTool, Description("Optionally precompute heavier indexes (string literals, attribute hits). Time-boxed.")]
+    [McpServerTool(ReadOnly = false), Description("Optionally precompute heavier indexes (string literals, attribute hits). Time-boxed.")]
     public static string WarmIndex(bool deep = false, double maxSeconds = 5.0, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

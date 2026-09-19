@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class LoadAssemblyTool
 {
-    [McpServerTool, Description("Load any .NET assembly for decompilation and analysis. Use 'gameDir' for Unity projects with automatic path detection, or 'assemblyPath' for direct assembly loading.")]
+    [McpServerTool(ReadOnly = false), Description("Load any .NET assembly for decompilation and analysis. Use 'gameDir' for Unity projects with automatic path detection, or 'assemblyPath' for direct assembly loading.")]
     public static string LoadAssembly(
         string? gameDir = null,
         string? assemblyPath = null,

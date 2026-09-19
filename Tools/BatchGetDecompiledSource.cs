@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class BatchGetDecompiledSourceTool
 {
-    [McpServerTool, Description("Fetch multiple members' decompiled source in one call with size caps.")]
+    [McpServerTool(ReadOnly = true), Description("Fetch multiple members' decompiled source in one call with size caps.")]
     public static string BatchGetDecompiledSource(string[] memberIds, int maxTotalChars = 200_000, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetMembersOfTypeTool
 {
-    [McpServerTool, Description("List members of a given type with filters and pagination. Modes: 'ids', 'discovery', 'signatures' (default), 'full'.")]
+    [McpServerTool(ReadOnly = true), Description("List members of a given type with filters and pagination. Modes: 'ids', 'discovery', 'signatures' (default), 'full'.")]
     public static string GetMembersOfType(string typeId, string? kind = null, string? accessibility = null, bool? isStatic = null, bool includeInherited = false, int limit = 100, string? cursor = null, string mode = "signatures", string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

@@ -38,11 +38,12 @@ Read these files first:
 Run after code changes:
 
 ```bash
-dotnet format DecompilerServer.sln
-dotnet test -c Release
+./scripts/verify.py
 ```
 
-Use `dotnet test -c Release --no-restore` only after restore/build assets already exist.
+This is the canonical local verification command. It logs full output under ignored `artifacts/logs/` and prints only `ok` on success. Release delivery remains the version-matching tag workflow documented in README.md.
+
+Every MCP tool must explicitly set `ReadOnly` on its `McpServerTool` attribute. Keep workspace and cache mutations non-read-only; see ARCHITECTURE.md for the classification contract.
 
 ## Documentation Policy
 

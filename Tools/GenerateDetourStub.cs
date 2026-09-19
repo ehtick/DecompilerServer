@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GenerateDetourStubTool
 {
-    [McpServerTool, Description("Generate a detour/stub method that calls the original, suitable for patch testing.")]
+    [McpServerTool(ReadOnly = true), Description("Generate a detour/stub method that calls the original, suitable for patch testing.")]
     public static string GenerateDetourStub(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

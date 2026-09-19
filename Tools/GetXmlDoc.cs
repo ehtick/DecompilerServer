@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetXmlDocTool
 {
-    [McpServerTool, Description("Get raw XML doc for a member if available.")]
+    [McpServerTool(ReadOnly = true), Description("Get raw XML doc for a member if available.")]
     public static string GetXmlDoc(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

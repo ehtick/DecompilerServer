@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class PingTool
 {
-    [McpServerTool, Description("Connectivity check. Returns 'pong' and current MVID if loaded.")]
+    [McpServerTool(ReadOnly = true), Description("Connectivity check. Returns 'pong' and current MVID if loaded.")]
     public static string Ping()
     {
         return ResponseFormatter.TryExecute(() =>

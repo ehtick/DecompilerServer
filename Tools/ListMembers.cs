@@ -6,7 +6,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class ListMembersTool
 {
-    [McpServerTool, Description("Compatibility alias for get_members_of_type. Use after search_types/search_symbols to inspect a type's members.")]
+    [McpServerTool(ReadOnly = true), Description("Compatibility alias for get_members_of_type. Use after search_types/search_symbols to inspect a type's members.")]
     public static string ListMembers(
         string typeId,
         string? kind = null,

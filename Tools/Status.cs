@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class StatusTool
 {
-    [McpServerTool, Description("Cheap current workspace status: loaded aliases, current alias, active assembly path/MVID, and small cache summary. Use get_server_stats for detailed diagnostics.")]
+    [McpServerTool(ReadOnly = true), Description("Cheap current workspace status: loaded aliases, current alias, active assembly path/MVID, and small cache summary. Use get_server_stats for detailed diagnostics.")]
     public static string Status()
     {
         return ResponseFormatter.TryExecute(() =>

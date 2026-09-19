@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class SearchAttributesTool
 {
-    [McpServerTool, Description("Find members decorated with a specific attribute type.")]
+    [McpServerTool(ReadOnly = true), Description("Find members decorated with a specific attribute type.")]
     public static string SearchAttributes(string attributeFullName, string? kind = null, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

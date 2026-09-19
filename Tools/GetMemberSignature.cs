@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetMemberSignatureTool
 {
-    [McpServerTool, Description("Quick signature preview for any member.")]
+    [McpServerTool(ReadOnly = true), Description("Quick signature preview for any member.")]
     public static string GetMemberSignature(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetImplementationsTool
 {
-    [McpServerTool, Description("Find implementations of an interface or interface method.")]
+    [McpServerTool(ReadOnly = true), Description("Find implementations of an interface or interface method.")]
     public static string GetImplementations(string interfaceTypeOrMethodId, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

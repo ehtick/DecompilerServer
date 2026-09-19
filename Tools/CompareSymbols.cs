@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class CompareSymbolsTool
 {
-    [McpServerTool, Description("Compare a type or member between two loaded contexts using a compact, kind-aware diff. compareMode: 'surface' for all kinds; methods also support 'body' (alias 'source'). Member symbols accept 'Namespace.Type:MemberName' or 'Namespace.Type.MemberName'.")]
+    [McpServerTool(ReadOnly = true), Description("Compare a type or member between two loaded contexts using a compact, kind-aware diff. compareMode: 'surface' for all kinds; methods also support 'body' (alias 'source'). Member symbols accept 'Namespace.Type:MemberName' or 'Namespace.Type.MemberName'.")]
     public static string CompareSymbols(
         string leftContextAlias,
         string rightContextAlias,

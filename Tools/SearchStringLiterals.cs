@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class SearchStringLiteralsTool
 {
-    [McpServerTool, Description("Search string literals across code. Regex optional.")]
+    [McpServerTool(ReadOnly = true), Description("Search string literals across code. Regex optional.")]
     public static string SearchStringLiterals(string pattern, bool regex = false, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

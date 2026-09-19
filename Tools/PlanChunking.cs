@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class PlanChunkingTool
 {
-    [McpServerTool, Description("Plan line-range chunks for a member's source for LLM-friendly paging. targetChunkSize is an estimated character budget per chunk; overlap is measured in lines.")]
+    [McpServerTool(ReadOnly = true), Description("Plan line-range chunks for a member's source for LLM-friendly paging. targetChunkSize is an estimated character budget per chunk; overlap is measured in lines.")]
     public static string PlanChunking(string memberId, int targetChunkSize = 6000, int overlap = 2, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

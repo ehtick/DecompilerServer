@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class SuggestTranspilerTargetsTool
 {
-    [McpServerTool, Description("Suggest candidate transpiler anchors from actual IL instructions. Read get_il for the complete instruction list before patching.")]
+    [McpServerTool(ReadOnly = true), Description("Suggest candidate transpiler anchors from actual IL instructions. Read get_il for the complete instruction list before patching.")]
     public static string SuggestTranspilerTargets(string memberId, int maxHints = 10, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

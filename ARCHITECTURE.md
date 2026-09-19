@@ -24,6 +24,24 @@ Tool shape:
 - tool methods should return through `ResponseFormatter.TryExecute(...)`;
 - tool names exposed to clients are normally snake_case versions of the C# method names.
 
+## MCP tool annotations
+
+Every tool explicitly declares `McpServerTool(ReadOnly = ...)`, exposed as
+`annotations.readOnlyHint` in `tools/list`. Inspection, search, comparison, and
+code-template tools are read-only. Generated code is returned as text, never
+written to a project. Internal caches, diagnostics, and lazy context activation
+are implementation details of inspection, not edits to the inspected assemblies.
+
+`load_assembly`, `unload`, `select_context`, `set_decompile_settings`,
+`clear_caches`, and `warm_index` remain non-read-only because their requested
+operation changes workspace registrations, selection, settings, or cache state.
+Do not blanket-label the server read-only or change client permission settings.
+Other annotation hints retain the SDK defaults, including open-world behavior
+because source retrieval can fetch SourceLink URLs.
+
+`ToolAnnotationTests` starts the actual server over stdio and checks the tool
+catalog received by a client. Approval decisions remain client policy.
+
 ## Service Graph
 
 ### DecompilerWorkspace
@@ -346,8 +364,7 @@ When changing documentation:
 After code changes, run:
 
 ```bash
-dotnet format DecompilerServer.sln
-dotnet test -c Release --no-restore
+./scripts/verify.py
 ```
 
 After documentation cleanup or API reshaping, also run a reference sweep:

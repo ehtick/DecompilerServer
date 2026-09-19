@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class ClearCachesTool
 {
-    [McpServerTool, Description("Clear caches and indexes. Scope: 'all' | 'source' | 'resolutions' | 'usage'.")]
+    [McpServerTool(ReadOnly = false), Description("Clear caches and indexes. Scope: 'all' | 'source' | 'resolutions' | 'usage'.")]
     public static string ClearCaches(string scope = "all", string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

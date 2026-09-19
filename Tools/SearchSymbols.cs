@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class SearchSymbolsTool
 {
-    [McpServerTool, Description("Search types and members together from fragments. For fully-qualified stale guesses, prefer resolve_member_id; this tool still returns a type/member fallback when Type.MissingMember resolves the type.")]
+    [McpServerTool(ReadOnly = true), Description("Search types and members together from fragments. For fully-qualified stale guesses, prefer resolve_member_id; this tool still returns a type/member fallback when Type.MissingMember resolves the type.")]
     public static string SearchSymbols(
         string query,
         string? kind = null,

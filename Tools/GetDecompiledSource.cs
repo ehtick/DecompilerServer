@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetDecompiledSourceTool
 {
-    [McpServerTool, Description("Return source for a member. Type requests prefer embedded/local/SourceLink-backed original source when available; decompiled non-type members are returned as member-scoped snippets.")]
+    [McpServerTool(ReadOnly = true), Description("Return source for a member. Type requests prefer embedded/local/SourceLink-backed original source when available; decompiled non-type members are returned as member-scoped snippets.")]
     public static string GetDecompiledSource(string memberId, bool includeHeader = true, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

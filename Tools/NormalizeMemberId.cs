@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class NormalizeMemberIdTool
 {
-    [McpServerTool, Description("Normalize partial or human-entered identifiers such as Namespace.Type.Member or XML-doc-like symbols into canonical memberIds.")]
+    [McpServerTool(ReadOnly = true), Description("Normalize partial or human-entered identifiers such as Namespace.Type.Member or XML-doc-like symbols into canonical memberIds.")]
     public static string NormalizeMemberId(string input, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

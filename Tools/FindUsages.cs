@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class FindUsagesTool
 {
-    [McpServerTool, Description("Find usages of a member across the assembly. Time-box and paginate.")]
+    [McpServerTool(ReadOnly = true), Description("Find usages of a member across the assembly. Time-box and paginate.")]
     public static string FindUsages(string memberId, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

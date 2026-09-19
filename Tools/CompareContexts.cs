@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class CompareContextsTool
 {
-    [McpServerTool, Description("Compare the type surface of two loaded contexts with structured summary output.")]
+    [McpServerTool(ReadOnly = true), Description("Compare the type surface of two loaded contexts with structured summary output.")]
     public static string CompareContexts(
         string leftContextAlias,
         string rightContextAlias,

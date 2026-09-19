@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class FindBaseTypesTool
 {
-    [McpServerTool, Description("Get base types and optionally implemented interfaces.")]
+    [McpServerTool(ReadOnly = true), Description("Get base types and optionally implemented interfaces.")]
     public static string FindBaseTypes(string typeId, bool includeInterfaces = true, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

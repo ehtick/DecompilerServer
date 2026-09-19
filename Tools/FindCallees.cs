@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class FindCalleesTool
 {
-    [McpServerTool, Description("List direct callees invoked by a method, including targetMemberId when local, symbol, opcode, offset, and external/unresolved resolution status.")]
+    [McpServerTool(ReadOnly = true), Description("List direct callees invoked by a method, including targetMemberId when local, symbol, opcode, offset, and external/unresolved resolution status.")]
     public static string FindCallees(string methodId, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

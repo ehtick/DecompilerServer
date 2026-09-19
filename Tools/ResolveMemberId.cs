@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class ResolveMemberIdTool
 {
-    [McpServerTool, Description("Resolve a memberId or human-entered symbol and return a one-line summary; structured errors include search/list-members hints.")]
+    [McpServerTool(ReadOnly = true), Description("Resolve a memberId or human-entered symbol and return a one-line summary; structured errors include search/list-members hints.")]
     public static string ResolveMemberId(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

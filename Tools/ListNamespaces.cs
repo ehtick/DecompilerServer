@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class ListNamespacesTool
 {
-    [McpServerTool, Description("List namespaces. Optional prefix filter and pagination.")]
+    [McpServerTool(ReadOnly = true), Description("List namespaces. Optional prefix filter and pagination.")]
     public static string ListNamespaces(string? prefix = null, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

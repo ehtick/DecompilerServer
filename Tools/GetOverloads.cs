@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetOverloadsTool
 {
-    [McpServerTool, Description("Find overloads for a method name within its declaring type.")]
+    [McpServerTool(ReadOnly = true), Description("Find overloads for a method name within its declaring type.")]
     public static string GetOverloads(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

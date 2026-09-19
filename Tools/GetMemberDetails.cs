@@ -8,7 +8,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetMemberDetailsTool
 {
-    [McpServerTool, Description("Detailed metadata for a member: attributes, docs, inheritance links.")]
+    [McpServerTool(ReadOnly = true), Description("Detailed metadata for a member: attributes, docs, inheritance links.")]
     public static string GetMemberDetails(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

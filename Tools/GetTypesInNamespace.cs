@@ -7,7 +7,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetTypesInNamespaceTool
 {
-    [McpServerTool, Description("Get all types inside a namespace. Optional deep traversal for child namespaces.")]
+    [McpServerTool(ReadOnly = true), Description("Get all types inside a namespace. Optional deep traversal for child namespaces.")]
     public static string GetTypesInNamespace(string ns, bool deep = false, int limit = 100, string? cursor = null, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

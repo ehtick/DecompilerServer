@@ -156,6 +156,15 @@ Once connected, ask your AI assistant to load and explore assemblies. For exampl
 
 The assistant will use DecompilerServer tools automatically. It can load assemblies, search types, decompile source, compare versions, and more. See the [Workflow Reference](#workflow-reference) for the full list of operations.
 
+### Tool approvals and plan mode
+
+Inspection tools advertise the standard MCP `readOnlyHint` annotation so clients
+can recognize read-only operations in plan mode and approval policies. Loading,
+unloading, selecting contexts, changing settings, and explicit cache operations
+remain state-changing tools. Update the server and reconnect or restart your MCP
+client to refresh its tool catalog. Claude Code, Codex, and other clients decide
+how to use these hints; annotations do not override their permission settings.
+
 ### Troubleshooting
 
 | Problem | Solution |
@@ -323,11 +332,10 @@ compare_symbols({
 ### Development
 
 ```bash
-dotnet format DecompilerServer.sln
-dotnet test -c Release
+./scripts/verify.py
 ```
 
-After restore/build has already completed, `dotnet test -c Release --no-restore` is the faster repeat check.
+The verification command runs formatting, Release tests, and a diff check. It prints `ok` only when all steps pass; full output is saved under ignored `artifacts/logs/`. On failure it reports the failed step, diagnostics, and log path.
 
 ### Agent Skill
 

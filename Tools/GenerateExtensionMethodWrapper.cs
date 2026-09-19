@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GenerateExtensionMethodWrapperTool
 {
-    [McpServerTool, Description("Generate an extension method wrapper for an instance method to ease call sites in mods.")]
+    [McpServerTool(ReadOnly = true), Description("Generate an extension method wrapper for an instance method to ease call sites in mods.")]
     public static string GenerateExtensionMethodWrapper(string memberId, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>

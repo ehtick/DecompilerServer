@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class GetILTool
 {
-    [McpServerTool, Description("Get real IL instructions for a method or constructor. Supports limit/cursor paging and startOffset/endOffset windows. Only format 'IL' is supported.")]
+    [McpServerTool(ReadOnly = true), Description("Get real IL instructions for a method or constructor. Supports limit/cursor paging and startOffset/endOffset windows. Only format 'IL' is supported.")]
     public static string GetIL(
         string memberId,
         string format = "IL",

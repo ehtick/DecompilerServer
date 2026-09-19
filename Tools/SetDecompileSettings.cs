@@ -9,7 +9,7 @@ namespace DecompilerServer;
 [McpServerToolType]
 public static class SetDecompileSettingsTool
 {
-    [McpServerTool, Description("Update decompiler settings (e.g., UsingDeclarations, ShowXmlDocumentation).")]
+    [McpServerTool(ReadOnly = false), Description("Update decompiler settings (e.g., UsingDeclarations, ShowXmlDocumentation).")]
     public static string SetDecompileSettings(Dictionary<string, object> settings, string? contextAlias = null)
     {
         return ResponseFormatter.TryExecute(() =>
